@@ -199,56 +199,100 @@ const players = [
         fact: "Fact about Andreas Christensen"
     }
 ];
-let currentPlayerIndex = 0; // Track the current player
-    let currentWord = ""; // The word to guess
-    let guessedLetters = []; // Track guessed letters
-    let wrongGuesses = 0; // Track wrong guesses
+let currentPlayerIndex = 0; // Index of the current player in the array
+    let currentWord = ""; // The word to guess (full name of the player)
+    let guessedLetters = []; // Array to keep track of correctly guessed letters
+    let wrongGuesses = 0; // Counter for wrong guesses
+    const maxErrors = 6; // Maximum number of wrong guesses allowed
+    let hintRevealed = false; // Flag to track if a hint has been revealed
 
-    // Initialize the game
+    // Initializes the game with the current player
     function initializeGame() {
         const player = players[currentPlayerIndex];
-        currentWord = player.name.toUpperCase().replace(" ", "");
-        guessedLetters = Array(currentWord.length).fill("_");
-        wrongGuesses = 0;
+        currentWord = player.name.toUpperCase(); // Process name for guessing (case insensitive)
+        guessedLetters = Array(currentWord.length).fill("_"); // Fill with underscores for unguessed letters
+        wrongGuesses = 0; // Reset wrong guesses
+        hintRevealed = false; // Reset hint flag
 
-        // Update UI
+        // Update UI elements with current player's information
         document.getElementById("player-photo").src = player.photo;
+        document.getElementById("player-name").textContent = player.name;
         document.getElementById("player-nationality").textContent = `Nationality: ${player.nationality}`;
         document.getElementById("player-position").textContent = `Position: ${player.position}`;
         document.getElementById("player-previous-club").textContent = `Previous Club: ${player.previousClub}`;
         document.getElementById("player-age").textContent = `Age: ${player.age}`;
         document.getElementById("player-fact").textContent = `Fact: ${player.fact}`;
         document.getElementById("word-to-guess").textContent = guessedLetters.join(" ");
+        document.getElementById("message").textContent = "";
+        updateErrorDisplay(); // Update the display of errors
     }
 
-    // Handle guess
+    // Updates the error display with red circles for wrong guesses
+    function updateErrorDisplay() {
+        const errorContainer = document.getElementById("error-container");
+        errorContainer.innerHTML = ""; // Clear existing errors
+        for (let i = 0; i < wrongGuesses; i++) {
+            const error = document.createElement("div");
+            error.className = "error";
+            errorContainer.appendChild(error);
+        }
+    }
+
+    // Reveals a hint by showing the next unguessed letter
+    function revealHint() {
+        if (hintRevealed) return; // Avoid revealing multiple hints
+
+        for (let i = 0; i < currentWord.length; i++) {
+            if (currentWord[i] !== " " && guessedLetters[i] === "_") {
+                guessedLetters[i] = currentWord[i];
+                document.getElementById("word-to-guess").textContent = guessedLetters.join(" ");
+                hintRevealed = true; // Set flag to prevent multiple hints
+                break; // Reveal only one letter per hint
+            }
+        }
+    }
+
+    // Handles the guess button click
     document.getElementById("guess-button").addEventListener("click", function() {
         const guessInput = document.getElementById("guess-input");
-        const guess = guessInput.value.toUpperCase();
-        guessInput.value = "";
+        const guess = guessInput.value.toUpperCase(); // Get the guess and convert to uppercase
+        guessInput.value = ""; // Clear the input field
 
-        if (guess.length === 1 && currentWord.includes(guess)) {
-            // Correct guess
-            for (let i = 0; i < currentWord.length; i++) {
-                if (currentWord[i] === guess) {
-                    guessedLetters[i] = guess;
-                }
-            }
+        // Check if the guess matches the player's name
+        if (guess === currentWord) {
+            document.getElementById("message").textContent = "Good job!";
+            setTimeout(nextPlayer, 2000); // Move to next player after 2 seconds
         } else {
-            // Wrong guess
             wrongGuesses++;
-            // Update hangman figure (not implemented here)
+            updateErrorDisplay(); // Update the error display
+
+            // Reveal a hint if the user gets it wrong
+            if (!hintRevealed) {
+                revealHint();
+            }
+
+            // Check if the maximum number of wrong guesses is reached
+            if (wrongGuesses >= maxErrors) {
+                document.getElementById("message").textContent = `The player's name was ${players[currentPlayerIndex].name}. Better luck next time!`;
+                setTimeout(nextPlayer, 2000); // Move to next player after 2 seconds
+            }
         }
-
-        document.getElementById("word-to-guess").textContent = guessedLetters.join(" ");
-
-        // Check win or lose condition (not implemented here)
     });
 
-    // Handle hint
+    // Handles the hint button click
     document.getElementById("hint-button").addEventListener("click", function() {
-        // Provide a hint (not implemented here)
+        revealHint(); // Reveal a hint
     });
+
+    // Moves to the next player and resets the game
+    function nextPlayer() {
+        currentPlayerIndex++;
+        if (currentPlayerIndex >= players.length) {
+            document.getElementById("message").textContent = "Quiz complete!";
+        } else {
+            initializeGame(); // Initialize the game with the next player
+        }
+    }
 
     initializeGame(); // Start the game
 });
