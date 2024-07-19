@@ -3,35 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess the Player Quiz</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Guess the Barca Player</title>
 </head>
 <body>
-    <div id="app">
-        <h1>Guess the Player Quiz</h1>
-        <div id="quiz-container">
-            <div id="player-info">
-                <img id="player-photo" src="" alt="Player Photo">
-                <div id="player-details">
-                    <p id="player-nationality"></p>
-                    <p id="player-position"></p>
-                    <p id="player-previous-club"></p>
-                    <p id="player-age"></p>
-                    <p id="player-fact"></p>
-                </div>
-            </div>
-            <div id="guessing-section">
-                <p id="word-to-guess"></p>
-                <div id="letters"></div>
-                <div id="hangman">
-                    <!-- Hangman figure will be displayed here -->
-                </div>
-                <input type="text" id="guess-input" maxlength="1" placeholder="Enter a letter">
-                <button id="guess-button">Guess</button>
-                <button id="hint-button">Hint</button>
-            </div>
-        </div>
+    <div class="card-container">
+        <img id="player-photo" src="link_to_photo" alt="Player Photo">
+        <div id="word-to-guess">_ _ _ _ _</div> <!-- Underlined name -->
+        <div id="player-name">Ronald Araújo</div> <!-- Full name in uppercase -->
+        <div class="player-detail" id="player-position">Position: Centre-Back</div>
+        <div class="player-detail" id="player-nationality">Nationality: Uruguay</div>
+        <div class="player-detail" id="player-age">Age: 25</div>
+        <div class="player-detail" id="player-previous-club">Previous Club: Boston River</div>
+        <div class="player-detail" id="player-fact">Fact: Fact about Ronald Araújo</div>
     </div>
-    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+    <div id="error-container"></div>
+    <input type="text" id="guess-input" placeholder="Enter full name">
+    <button id="guess-button">Guess</button>
+    <button id="hint-button">Hint</button>
+    <div id="message"></div>
+    <script src="script.js"></script>
 </body>
 </html>
