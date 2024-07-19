@@ -1,0 +1,107 @@
+/* General styling for the body */
+body {
+    font-family: Arial, sans-serif,;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #004D98;
+}
+
+/* Container for the player card */
+.card-container {
+    position: relative;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #A50044;
+    border: 1px solid #EDBB00;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Styling for the player's photo */
+#player-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Styling for the player's name */
+#player-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Styling for the player details */
+#player-nationality,
+#player-position,
+#player-previous-club,
+#player-age,
+#player-fact {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Styling for the word to guess */
+#word-to-guess {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Error display styling */
+#error-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+/* Styling for the buttons */
+button {
+    background-color: #FFED02;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #DB0030;
+}
+
+/* Styling for the input field */
+#guess-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+}
+
+/* Styling for the message display */
+#message {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+}
+
+/* Container for the hint button */
+#hint-button-container {
+    margin: 20px 0;
+}
