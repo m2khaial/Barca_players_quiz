@@ -6,6 +6,13 @@ body {
     padding: 0;
     background-color: #004D98;
 }
+h1,p{
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
+}
 
 /* Container for the player card */
 .card-container {
@@ -14,15 +21,15 @@ body {
     margin: 20px auto;
     padding: 20px;
     background-color: #A50044;
-    border: 1px solid #EDBB00;
+    border: 20px solid #EDBB00;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    text-align: center;
 }
 
 /* Styling for the player's photo */
 #player-photo {
-    width: 10%;
+    width: 50%;
     height: auto;
     border-radius: 10px;
 }
@@ -32,6 +39,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-top: 10px;
+
 }
 
 /* Styling for the player details */
