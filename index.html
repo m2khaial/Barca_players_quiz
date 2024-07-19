@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Player Quiz</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div id="app">
+        <h1>Guess the Player Quiz</h1>
+        <div id="quiz-container">
+            <div id="player-info">
+                <img id="player-photo" src="" alt="Player Photo">
+                <div id="player-details">
+                    <p id="player-nationality"></p>
+                    <p id="player-position"></p>
+                    <p id="player-previous-club"></p>
+                    <p id="player-age"></p>
+                    <p id="player-fact"></p>
+                </div>
+            </div>
+            <div id="guessing-section">
+                <p id="word-to-guess"></p>
+                <div id="letters"></div>
+                <div id="hangman">
+                    <!-- Hangman figure will be displayed here -->
+                </div>
+                <input type="text" id="guess-input" maxlength="1" placeholder="Enter a letter">
+                <button id="guess-button">Guess</button>
+                <button id="hint-button">Hint</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
