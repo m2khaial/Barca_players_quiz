@@ -1,13 +1,13 @@
-/* General styling for the body */
 body {
-    font-family: Technoma, sans-serif,;
+    font-family: Technoma, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
     background-color: #004D98;
 }
+
 .navbar {
-    background-color: #004080; /* Barca Blue */
+    background-color: #004080;
     color: white;
     padding: 20px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -18,10 +18,9 @@ body {
     font-size: 24px;
 }
 
-/* Description Section */
 .description {
     padding: 20px;
-    background-color: #e3f2fd; /* Light blue background */
+    background-color: #e3f2fd;
     border-bottom: 1px solid #ddd;
 }
 
@@ -31,7 +30,6 @@ body {
     color: #333;
 }
 
-/* Container for the player card */
 .card-container {
     position: relative;
     max-width: 500px;
@@ -44,38 +42,23 @@ body {
     text-align: center;
 }
 
-/* Styling for the player's photo */
 #player-photo {
     width: 50%;
     height: auto;
     border-radius: 10px;
 }
 
-
-
-/* Styling for the player's name */
 #player-name {
     font-size: 24px;
     font-weight: bold;
     margin-top: 10px;
-
 }
 
-/* Styling for the player details */
-#player-nationality,
-#player-position,
-#player-previous-club,
-#player-age,
-#player-fact {
-    font-size: 16px;
-    margin: 5px 0;
-}
-/* Styling for the player details */
 .player-detail {
     font-size: 14px;
     margin: 5px 0;
 }
-/* Styling for the word to guess */
+
 #word-to-guess {
     font-size: 18px;
     font-weight: bold;
@@ -83,7 +66,6 @@ body {
     text-transform: uppercase;
 }
 
-/* Error display styling */
 #error-container {
     margin: 20px 0;
     display: flex;
@@ -99,7 +81,6 @@ body {
     margin: 0 5px;
 }
 
-/* Styling for the buttons */
 button {
     background-color: #FFED02;
     color: white;
@@ -108,35 +89,44 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin: 10px;
+    margin: 10px 5px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #DB0030;
+    background-color: #FF4500;
 }
 
-/* Styling for the input field */
+.guess-container {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #guess-input {
     padding: 10px;
     font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.suggestions {
+    position: absolute;
+    background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: 250px;
-    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    text-align: left;
+    z-index: 1000;
 }
 
-/* Styling for the message display */
-#message {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    margin: 20px 0;
-}
-
-/* Container for the hint button */
-#hint-button-container {
-    margin: 20px 0;
-}
 .suggestion-item {
     padding: 10px;
     cursor: pointer;
@@ -146,3 +136,8 @@ button:hover {
     background-color: #f0f0f0;
 }
 
+#message {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
