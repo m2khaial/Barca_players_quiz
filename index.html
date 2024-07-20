@@ -18,7 +18,6 @@
     <div class="card-container">
         <img id="player-photo" src="link_to_photo" alt="Player Photo">
         <div id="word-to-guess">_ _ _ _ _</div> <!-- Underlined name -->
-        <div id="player-name">Ronald Araújo</div> <!-- Full name in uppercase -->
         <div class="player-detail" id="player-position">Position: Centre-Back</div>
         <div class="player-detail" id="player-nationality">Nationality: Uruguay</div>
         <div class="player-detail" id="player-age">Age: 25</div>
@@ -26,9 +25,18 @@
         <div class="player-detail" id="player-fact">Fact: Fact about Ronald Araújo</div>
     </div>
     <div id="error-container"></div>
-    <input type="text" id="guess-input" placeholder="Enter full name">
+
+    <!-- Guess Input and Dropdown -->
+    <div class="guess-container">
+        <input type="text" id="guess-input" placeholder="Enter full name">
+        <div id="suggestions"></div>
+    </div>
+
+    <!-- Guess and Hint Buttons -->
     <button id="guess-button">Guess</button>
     <button id="hint-button">Hint</button>
+
+    <!-- Message Display -->
     <div id="message"></div>
     <script src="script.js"></script>
 </body>

@@ -216,7 +216,6 @@ let currentPlayerIndex = 0; // Index of the current player in the array
 
         // Update UI elements with current player's information
         document.getElementById("player-photo").src = player.photo;
-        document.getElementById("player-name").textContent = player.name;
         document.getElementById("player-nationality").textContent = `Nationality: ${player.nationality}`;
         document.getElementById("player-position").textContent = `Position: ${player.position}`;
         document.getElementById("player-previous-club").textContent = `Previous Club: ${player.previousClub}`;
@@ -251,7 +250,29 @@ let currentPlayerIndex = 0; // Index of the current player in the array
             }
         }
     }
+    function filterPlayers(query) {
+        return players.filter(player => player.name.toUpperCase().startsWith(query.toUpperCase()));
+    }
 
+    function displaySuggestions(suggestions) {
+        const suggestionsContainer = document.getElementById("suggestions");
+        suggestionsContainer.innerHTML = "";
+        suggestions.forEach(player => {
+            const suggestionItem = document.createElement("div");
+            suggestionItem.className = "suggestion-item";
+            suggestionItem.textContent = player.name;
+            suggestionItem.addEventListener("click", () => {
+                document.getElementById("guess-input").value = player.name;
+                suggestionsContainer.innerHTML = "";
+            });
+            suggestionsContainer.appendChild(suggestionItem);
+        });
+    }
+    document.getElementById("guess-input").addEventListener("input", function() {
+        const query = this.value;
+        const suggestions = filterPlayers(query);
+        displaySuggestions(suggestions);
+    });
     // Handles the guess button click
     document.getElementById("guess-button").addEventListener("click", function() {
         const guessInput = document.getElementById("guess-input");
@@ -261,7 +282,7 @@ let currentPlayerIndex = 0; // Index of the current player in the array
         // Check if the guess matches the player's name
         if (guess === currentWord) {
             document.getElementById("message").textContent = "Good job!";
-            setTimeout(nextPlayer, 2000); // Move to next player after 2 seconds
+            setTimeout(nextPlayer, 500); // Move to next player after 0.5 seconds
         } else {
             wrongGuesses++;
             updateErrorDisplay(); // Update the error display
@@ -274,7 +295,7 @@ let currentPlayerIndex = 0; // Index of the current player in the array
             // Check if the maximum number of wrong guesses is reached
             if (wrongGuesses >= maxErrors) {
                 document.getElementById("message").textContent = `The player's name was ${players[currentPlayerIndex].name}. Better luck next time!`;
-                setTimeout(nextPlayer, 2000); // Move to next player after 2 seconds
+                setTimeout(nextPlayer, 500); // Move to next player after 0.5 seconds
             }
         }
     });

@@ -51,6 +51,8 @@ body {
     border-radius: 10px;
 }
 
+
+
 /* Styling for the player's name */
 #player-name {
     font-size: 24px;
@@ -68,12 +70,17 @@ body {
     font-size: 16px;
     margin: 5px 0;
 }
-
+/* Styling for the player details */
+.player-detail {
+    font-size: 14px;
+    margin: 5px 0;
+}
 /* Styling for the word to guess */
 #word-to-guess {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
-    margin: 20px 0;
+    margin: 10px 0;
+    text-transform: uppercase;
 }
 
 /* Error display styling */
@@ -130,3 +137,12 @@ button:hover {
 #hint-button-container {
     margin: 20px 0;
 }
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
