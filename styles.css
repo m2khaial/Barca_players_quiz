@@ -40,6 +40,18 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #player-photo {
@@ -140,4 +152,43 @@ button:hover {
     font-size: 18px;
     font-weight: bold;
     margin-top: 20px;
+    opacity: 0;
+}
+
+.message {
+    animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 1.5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.info {
+    color: blue;
 }

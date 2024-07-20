@@ -276,26 +276,24 @@ let currentPlayerIndex = 0; // Index of the current player in the array
     // Handles the guess button click
     document.getElementById("guess-button").addEventListener("click", function() {
         const guessInput = document.getElementById("guess-input");
-        const guess = guessInput.value.toUpperCase(); // Get the guess and convert to uppercase
-        guessInput.value = ""; // Clear the input field
+        const guess = guessInput.value.toUpperCase();
+        guessInput.value = "";
 
-        // Check if the guess matches the player's name
         if (guess === currentWord) {
-            document.getElementById("message").textContent = "Good job!";
-            setTimeout(nextPlayer, 500); // Move to next player after 0.5 seconds
+            showMessage("Good job!", "success");
+            setTimeout(nextPlayer, 2000);
         } else {
             wrongGuesses++;
-            updateErrorDisplay(); // Update the error display
+            updateErrorDisplay();
+            showMessage("Incorrect guess!", "error");
 
-            // Reveal a hint if the user gets it wrong
             if (!hintRevealed) {
                 revealHint();
             }
 
-            // Check if the maximum number of wrong guesses is reached
             if (wrongGuesses >= maxErrors) {
-                document.getElementById("message").textContent = `The player's name was ${players[currentPlayerIndex].name}. Better luck next time!`;
-                setTimeout(nextPlayer, 500); // Move to next player after 0.5 seconds
+                showMessage(`The player's name was ${players[currentPlayerIndex].name}. Better luck next time!`, "error");
+                setTimeout(nextPlayer, 2000);
             }
         }
     });
@@ -314,6 +312,15 @@ let currentPlayerIndex = 0; // Index of the current player in the array
             initializeGame(); // Initialize the game with the next player
         }
     }
+    function showMessage(message, type) {
+        const messageContainer = document.getElementById("message");
+        messageContainer.textContent = message;
+        messageContainer.className = "";
+        messageContainer.classList.add("message", type);
+
+        messageContainer.style.animation = "fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 1.5s";
+    }
+
 
     initializeGame(); // Start the game
 });
