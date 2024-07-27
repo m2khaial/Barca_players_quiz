@@ -245,7 +245,7 @@ let currentPlayerIndex = 0; // Index of the current player in the array
             if (currentWord[i] !== " " && guessedLetters[i] === "_") {
                 guessedLetters[i] = currentWord[i];
                 document.getElementById("word-to-guess").textContent = guessedLetters.join(" ");
-                hintRevealed = true; // Set flag to prevent multiple hints
+             // Set flag to prevent multiple hints
                 break; // Reveal only one letter per hint
             }
         }

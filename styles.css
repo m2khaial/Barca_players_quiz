@@ -67,8 +67,9 @@ body {
 }
 
 .player-detail {
-    font-size: 14px;
+    font-size: 30px;
     margin: 5px 0;
+    font:bold
 }
 
 #word-to-guess {
