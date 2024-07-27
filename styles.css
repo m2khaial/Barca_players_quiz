@@ -67,9 +67,17 @@ body {
 }
 
 .player-detail {
-    font-size: 30px;
     margin: 5px 0;
-    font:bold
+}
+
+.player-detail strong {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.player-detail span {
+    font-size: 18px;
+    font-weight: normal;
 }
 
 #word-to-guess {
