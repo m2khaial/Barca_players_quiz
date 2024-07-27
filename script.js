@@ -7,7 +7,7 @@ const players = [
         nationality: "Germany",
         previousClub: "Borussia Mönchengladbach",
         photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/TER%20STEGEN-min.jpg",
-        fact: "Fact about Marc-André ter Stegen"
+        fact: ""
     },
     {
         name: "Inaki Pena",
@@ -16,7 +16,7 @@ const players = [
         nationality: "Spain",
         previousClub: "FC Barcelona B",
         photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/I%C3%91AKI%20PE%C3%91A-min.jpg",
-        fact: "Fact about Iñaki Peña"
+        fact: ""
     },
     {
         name: "Ronald Araujo",
@@ -25,7 +25,7 @@ const players = [
         nationality: "Uruguay",
         previousClub: "Boston River",
         photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/ARAUJO-min.jpg",
-        fact: "Fact about Ronald Araújo"
+        fact: ""
     },
     {
         name: "Jules Kounde",
@@ -34,7 +34,7 @@ const players = [
         nationality: "France",
         previousClub: "Sevilla FC",
         photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/KOUND%C3%89%20(retrat)[7500].jpg",
-        fact: "Fact about Jules Koundé"
+        fact: ""
     },
     {
         name: "Andreas Christensen",
@@ -43,7 +43,7 @@ const players = [
         nationality: "Denmark",
         previousClub: "Chelsea FC",
         photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        fact: " "
     },
     {
         name: "Pau Cubarsi",
@@ -51,8 +51,8 @@ const players = [
         position: "Centre-Back",
         nationality: "Spain",
         previousClub: "La Masia",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://pbs.twimg.com/media/GIgNdrDXYAEG4S7.jpg",
+        fact: " "
     },
     {
         name: "Eric Garcia",
@@ -60,8 +60,8 @@ const players = [
         position: "Centre-Back",
         nationality: "Spain",
         previousClub: "Manchester City",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZQN0yumWGYR67Qa1g9nU1UtvbaN5mqA2vow&s",
+        fact: " "
     },
     {
         name: "Inigo Martinez",
@@ -69,8 +69,8 @@ const players = [
         position: "Centre-Back",
         nationality: "Spain",
         previousClub: "Athletic Bilbao",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/I%C3%91IGO%20MART%C3%8DNEZ.jpg",
+        fact: " "
     },
     {
         name: "Alejandro Balde",
@@ -78,8 +78,8 @@ const players = [
         position: "Left-Back",
         nationality: "Spain",
         previousClub: "La Masia",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/BALDE-min.jpg",
+        fact: " "
     },
     {
         name: "Hector Fort",
@@ -87,8 +87,8 @@ const players = [
         position: "Right-Back",
         nationality: "Spain",
         previousClub: "La Masia",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://assets.sorare.com/playerpicture/298ed155-379f-4fea-94c2-cc0f45a07884/picture/squared-7fde5387287534b54fc0fc42efc80637.png",
+        fact: " "
     },
     {
         name: "Oriol Romeu",
@@ -96,8 +96,8 @@ const players = [
         position: "Center-Defensive-Midfielder",
         nationality: "Spain",
         previousClub: "Girona",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/ORIOL%20ROMEU.jpg",
+        fact: " "
     },
     {
         name: "Pablo Gavi",
@@ -105,8 +105,8 @@ const players = [
         position: "Center-Midifield",
         nationality: "Spain",
         previousClub: "La Masia",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/GAVI-min.jpg",
+        fact: " "
     },
     {
         name: "Pedri",
@@ -114,8 +114,8 @@ const players = [
         position: "Center-Midfield",
         nationality: "Spain",
         previousClub: "Las Palmas",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/PEDRI-min.jpg",
+        fact: " "
     },
     {
         name: "Frenkie De Jong",
@@ -123,8 +123,8 @@ const players = [
         position: "Center-Midfield",
         nationality: "Netherlands",
         previousClub: "Ajax",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/DE%20JONG-min.jpg",
+        fact: " "
     },
     {
         name: "Fermin Lopez",
@@ -132,8 +132,8 @@ const players = [
         position: "Center-Midfield",
         nationality: "Spain",
         previousClub: "La Masia",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/FERM%C3%8DN%20L%C3%93PEZ.png",
+        fact: " "
     },
     {
         name: "Ilkay Gundogan",
@@ -141,8 +141,8 @@ const players = [
         position: "Center-Midfield",
         nationality: "Germany",
         previousClub: "Manchester City",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/G%C3%9CNDOGAN.jpg",
+        fact: " "
     },
     {
         name: "Robert Lewandowski",
@@ -150,8 +150,8 @@ const players = [
         position: "Striker",
         nationality: "Poland",
         previousClub: "Bayern Munich",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/LEWANDOWSKI-min.jpg",
+        fact: " "
     },
     {
         name: "Ferran Torres",
@@ -159,8 +159,8 @@ const players = [
         position: "Right-Wing/Left-Wing",
         nationality: "Spain",
         previousClub: "Manchester City",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/FERRAN%20TORRES-min.jpg",
+        fact: " "
     },
     {
         name: "Raphinha",
@@ -168,8 +168,8 @@ const players = [
         position: "Right-Wing/Left-Wing",
         nationality: "Brazil",
         previousClub: "Leeds",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/RAPHINHA-%20RETRAT.jpg",
+        fact: " "
     },
     {
         name: "Ansu Fati",
@@ -177,8 +177,8 @@ const players = [
         position: "Right-Wing/Left-Wing",
         nationality: "Spain",
         previousClub: "La Masia",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSN4_6miybVhQ7aJz5MAxxkSBTA0_BvPR5E0-kNVO4bvAHGOJV5IXiApiILylmqAU12EjsnQke0hTBAfxlwC-OXxNeAhm7rdo74Hq0I2Q",
+        fact: " "
     },
     {
         name: "Victor Roque",
@@ -186,8 +186,8 @@ const players = [
         position: "Striker",
         nationality: "Brazil",
         previousClub: "Athletico Paranaense",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://www.fcbarcelona.com/photo-resources/2024/01/05/d29ca589-25b2-4be3-a896-2a9812bcc7ef/mini_19-VITOR_ROQUE.png?width=670&height=790",
+        fact: " "
     },
     {
         name: "Lamine Yamal",
@@ -195,8 +195,8 @@ const players = [
         position: "Right-Wing",
         nationality: "Spain",
         previousClub: "La Masia",
-        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/CHRISTENSEN%20-%20RETRAT.jpg",
-        fact: "Fact about Andreas Christensen"
+        photo: "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/LAMINE%20YAMAL.png",
+        fact: " "
     }
 ];
 
