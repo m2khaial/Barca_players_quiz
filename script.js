@@ -199,6 +199,15 @@ const players = [
         fact: "Fact about Andreas Christensen"
     }
 ];
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+shuffle(players);
+
 let currentPlayerIndex = 0; // Index of the current player in the array
     let currentWord = ""; // The word to guess (full name of the player)
     let guessedLetters = []; // Array to keep track of correctly guessed letters
@@ -251,7 +260,7 @@ let currentPlayerIndex = 0; // Index of the current player in the array
         }
     }
     function filterPlayers(query) {
-        return players.filter(player => player.name.toUpperCase().startsWith(query.toUpperCase()));
+        return players.filter(player => player.name.toUpperCase().includes(query.toUpperCase()));
     }
 
     function displaySuggestions(suggestions) {
