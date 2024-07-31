@@ -146,16 +146,37 @@ button:hover {
     background-color: #f0f0f0;
 }
 
-#message {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
+#message-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
     opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.message {
-    animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 1.5s;
+#message-container p {
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
+
+.success {
+    background-color: green;
+    color: white;
+}
+
+.error {
+    background-color: red;
+    color: white;
+}
+
+.info {
+    background-color: blue;
+    color: white;
+}
+
 
 @keyframes fadeIn {
     0% {
@@ -177,16 +198,4 @@ button:hover {
         opacity: 0;
         transform: translateY(-20px);
     }
-}
-
-.success {
-    color: green;
-}
-
-.error {
-    color: red;
-}
-
-.info {
-    color: blue;
 }

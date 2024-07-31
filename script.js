@@ -324,13 +324,10 @@ let currentPlayerIndex = 0; // Index of the current player in the array
     function showMessage(message, type) {
         const messageContainer = document.getElementById("message");
         messageContainer.textContent = message;
-        messageContainer.className = `message ${type}`;
+        messageContainer.className = "";
+        messageContainer.classList.add("message", type);
 
-        messageContainer.style.animation = "fadeIn 0.5s, fadeOut 1.5s 1.5s";
-
-        setTimeout(() => {
-            messageContainer.style.animation = "";
-        }, 3000);
+        messageContainer.style.animation = "fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 1.5s";
     }
 
 
