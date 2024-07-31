@@ -312,22 +312,26 @@ let currentPlayerIndex = 0; // Index of the current player in the array
         revealHint(); // Reveal a hint
     });
 
-    // Moves to the next player and resets the game
     function nextPlayer() {
         currentPlayerIndex++;
+        console.log(`Current Player Index: ${currentPlayerIndex}`); // Debugging
         if (currentPlayerIndex >= players.length) {
             document.getElementById("message").textContent = "Quiz complete!";
         } else {
             initializeGame(); // Initialize the game with the next player
         }
     }
+    
     function showMessage(message, type) {
         const messageContainer = document.getElementById("message");
         messageContainer.textContent = message;
         messageContainer.className = "";
         messageContainer.classList.add("message", type);
-
+    
         messageContainer.style.animation = "fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 1.5s";
+    
+        // Debugging - Check if this is called properly
+        console.log(`Message: ${message}, Type: ${type}`);
     }
 
 
