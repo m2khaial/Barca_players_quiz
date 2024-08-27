@@ -156,37 +156,44 @@ button:hover {
 
 #message-container {
     position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    opacity: 0;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to be fully centered */
+    z-index: 2000; /* Ensure it's on top of other elements */
+    opacity: 0; /* Initially hidden */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background for pop-up */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 
 #message-container p {
     margin: 0;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 18px;
+    color: #ffffff; /* White text for better contrast */
 }
 
 .success {
     background-color: #28a745;
-    color: white;
+    color: #ffffff;
 }
 
 .error {
     background-color: #dc3545;
-    color: white;
+    color: #ffffff;
 }
 
 .info {
     background-color: #007bff;
-    color: white;
+    color: #ffffff;
 }
-
-
 
 @keyframes fadeIn {
     0% {
