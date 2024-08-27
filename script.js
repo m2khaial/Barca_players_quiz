@@ -302,10 +302,12 @@ const playerPhoto = document.getElementById("player-photo");
         const playerName = currentPlayer.name;
         let newWord = "";
 
+        // Reveal a random letter
+        let revealedLetter = false;
         for (let i = 0; i < playerName.length; i++) {
-            if (currentWord[i] === "_") {
+            if (currentWord[i] === "_" && !revealedLetter) {
                 newWord += playerName[i];
-                break;
+                revealedLetter = true;
             } else {
                 newWord += currentWord[i];
             }
