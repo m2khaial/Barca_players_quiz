@@ -226,7 +226,6 @@ const playerPhoto = document.getElementById("player-photo");
     const hintButton = document.getElementById("hint-button");
     const errorContainer = document.getElementById("error-container");
     const suggestionsContainer = document.getElementById("suggestions");
-    const messageBox = document.getElementById("message-box");
 
     // Initialize game with the first player
     function initializeGame() {
@@ -235,7 +234,6 @@ const playerPhoto = document.getElementById("player-photo");
         resetGuessInput();
         resetErrors();
         updateWordToGuess(currentPlayer.name);
-        updateMessageBox("");
     }
 
     // Update player card details
@@ -265,17 +263,11 @@ const playerPhoto = document.getElementById("player-photo");
         errorContainer.innerHTML = "";
     }
 
-    // Update the message box with a given message
-    function updateMessageBox(message) {
-        messageBox.textContent = message;
-    }
-
     // Handle guessing logic
     guessButton.addEventListener("click", function () {
         const userGuess = guessInput.value.trim().toLowerCase();
         if (userGuess === currentPlayer.name.toLowerCase()) {
             // Correct guess
-            updateMessageBox("That is correct! Good job! Onto the next player...");
             currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
             initializeGame();
         } else {
@@ -283,7 +275,6 @@ const playerPhoto = document.getElementById("player-photo");
             errors++;
             if (errors >= maxErrors) {
                 // Move to next player after reaching max errors
-                updateMessageBox(`Sorry you are out of guesses for this player. His name is ${currentPlayer.name}. Maybe you'll have better luck with the next player.`);
                 currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
                 initializeGame();
             } else {
@@ -291,23 +282,20 @@ const playerPhoto = document.getElementById("player-photo");
                 const errorIndicator = document.createElement("div");
                 errorIndicator.className = "error";
                 errorContainer.appendChild(errorIndicator);
-                updateMessageBox("Wrong player...If you need help, try revealing a letter by pressing the hint button.");
             }
         }
     });
 
-    // Handle hint button click - reveal random letter
+    // Handle hint button click
     hintButton.addEventListener("click", function () {
         const currentWord = wordToGuess.textContent.replace(/\s+/g, '');
         const playerName = currentPlayer.name;
         let newWord = "";
 
-        // Reveal a random letter
-        let revealedLetter = false;
         for (let i = 0; i < playerName.length; i++) {
-            if (currentWord[i] === "_" && !revealedLetter) {
+            if (currentWord[i] === "_") {
                 newWord += playerName[i];
-                revealedLetter = true;
+                break;
             } else {
                 newWord += currentWord[i];
             }
