@@ -1,21 +1,21 @@
 body {
-    font-family: Technoma, sans-serif, times new roman;
-    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    background: linear-gradient(135deg, #004d98, #a50044); /* Gradient background */
+    color: #ffffff;
     margin: 0;
     padding: 0;
-    background-color: #004D98;
 }
 
 .navbar {
-    background-color: #EDBB00;
+    background: linear-gradient(135deg, #EDBB00, #FFED02);
     color: black;
     padding: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 
@@ -24,10 +24,10 @@ body {
     max-width: 500px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #A50044;
+    background: linear-gradient(135deg, #A50044, #800030);
     border: 20px solid #EDBB00;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     animation: fadeIn 1s ease-in-out;
 }
@@ -47,12 +47,14 @@ body {
     width: 50%;
     height: auto;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow around the image */
 }
 
 #player-name {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     margin-top: 10px;
+    color: #FFED02;
 }
 
 .player-detail {
@@ -62,6 +64,7 @@ body {
 .player-detail strong {
     font-size: 20px;
     font-weight: bold;
+    color: #FFED02;
 }
 
 .player-detail span {
@@ -70,10 +73,11 @@ body {
 }
 
 #word-to-guess {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     margin: 10px 0;
     text-transform: uppercase;
+    color: #FFED02;
 }
 
 #error-container {
@@ -92,8 +96,8 @@ body {
 }
 
 button {
-    background-color: #FFED02;
-    color: white;
+    background: linear-gradient(135deg, #FFED02, #FFA500);
+    color: black;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -104,7 +108,8 @@ button {
 }
 
 button:hover {
-    background-color: #FF4500;
+    background: linear-gradient(135deg, #FFA500, #FF4500);
+    transform: translateY(-2px); /* Slight lift on hover */
 }
 
 .guess-container {
@@ -123,11 +128,12 @@ button:hover {
     max-width: 300px;
     box-sizing: border-box;
     margin-bottom: 5px;
+    background-color: #FFF;
 }
 
 .suggestions {
     position: absolute;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid #ddd;
     border-radius: 5px;
     width: 100%;
@@ -135,15 +141,17 @@ button:hover {
     box-sizing: border-box;
     text-align: left;
     z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .suggestion-item {
     padding: 10px;
     cursor: pointer;
+    color: #333;
 }
 
 .suggestion-item:hover {
-    background-color: #f0f0f0;
+    background-color: #eee;
 }
 
 #message-container {
@@ -153,29 +161,31 @@ button:hover {
     transform: translateX(-50%);
     z-index: 1000;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 #message-container p {
     margin: 0;
     padding: 10px 20px;
     border-radius: 5px;
+    font-size: 18px;
 }
 
 .success {
-    background-color: green;
+    background-color: #28a745;
     color: white;
 }
 
 .error {
-    background-color: red;
+    background-color: #dc3545;
     color: white;
 }
 
 .info {
-    background-color: blue;
+    background-color: #007bff;
     color: white;
 }
+
 
 
 @keyframes fadeIn {
