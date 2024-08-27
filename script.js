@@ -215,97 +215,126 @@ const maxErrors = 6;
 
 // Elements
 const playerPhoto = document.getElementById("player-photo");
-const playerPosition = document.getElementById("player-position");
-const playerNationality = document.getElementById("player-nationality");
-const playerAge = document.getElementById("player-age");
-const playerPreviousClub = document.getElementById("player-previous-club");
-const playerFact = document.getElementById("player-fact");
-const wordToGuess = document.getElementById("word-to-guess");
-const guessInput = document.getElementById("guess-input");
-const guessButton = document.getElementById("guess-button");
-const hintButton = document.getElementById("hint-button");
-const errorContainer = document.getElementById("error-container");
+    const playerPosition = document.getElementById("player-position");
+    const playerNationality = document.getElementById("player-nationality");
+    const playerAge = document.getElementById("player-age");
+    const playerPreviousClub = document.getElementById("player-previous-club");
+    const playerFact = document.getElementById("player-fact");
+    const wordToGuess = document.getElementById("word-to-guess");
+    const guessInput = document.getElementById("guess-input");
+    const guessButton = document.getElementById("guess-button");
+    const hintButton = document.getElementById("hint-button");
+    const errorContainer = document.getElementById("error-container");
+    const suggestionsContainer = document.getElementById("suggestions");
 
-// Initialize game with the first player
-function initializeGame() {
-    currentPlayer = players[currentPlayerIndex];
-    updatePlayerCard(currentPlayer);
-    resetGuessInput();
-    resetErrors();
-    updateWordToGuess(currentPlayer.name);
-}
+    // Initialize game with the first player
+    function initializeGame() {
+        currentPlayer = players[currentPlayerIndex];
+        updatePlayerCard(currentPlayer);
+        resetGuessInput();
+        resetErrors();
+        updateWordToGuess(currentPlayer.name);
+    }
 
-// Update player card details
-function updatePlayerCard(player) {
-    playerPhoto.src = player.photo;
-    playerPosition.textContent = `Position: ${player.position}`;
-    playerNationality.textContent = `Nationality: ${player.nationality}`;
-    playerAge.textContent = `Age: ${player.age}`;
-    playerPreviousClub.textContent = `Previous Club: ${player.previousClub}`;
-    playerFact.textContent = `Fact: ${player.fact}`;
-}
+    // Update player card details
+    function updatePlayerCard(player) {
+        playerPhoto.src = player.photo;
+        playerPosition.textContent = `Position: ${player.position}`;
+        playerNationality.textContent = `Nationality: ${player.nationality}`;
+        playerAge.textContent = `Age: ${player.age}`;
+        playerPreviousClub.textContent = `Previous Club: ${player.previousClub}`;
+        playerFact.textContent = `Fact: ${player.fact}`;
+    }
 
-// Update the word-to-guess display with underscores
-function updateWordToGuess(word) {
-    wordToGuess.textContent = "_ ".repeat(word.length).trim();
-}
+    // Update the word-to-guess display with underscores
+    function updateWordToGuess(word) {
+        wordToGuess.textContent = "_ ".repeat(word.length).trim();
+    }
 
-// Reset guess input field
-function resetGuessInput() {
-    guessInput.value = "";
-}
+    // Reset guess input field
+    function resetGuessInput() {
+        guessInput.value = "";
+        suggestionsContainer.innerHTML = ""; // Clear suggestions when resetting input
+    }
 
-// Reset error count and display
-function resetErrors() {
-    errors = 0;
-    errorContainer.innerHTML = "";
-}
+    // Reset error count and display
+    function resetErrors() {
+        errors = 0;
+        errorContainer.innerHTML = "";
+    }
 
-// Handle guessing logic
-guessButton.addEventListener("click", function () {
-    const userGuess = guessInput.value.trim().toLowerCase();
-    if (userGuess === currentPlayer.name.toLowerCase()) {
-        // Correct guess
-        currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
-        initializeGame();
-    } else {
-        // Incorrect guess
-        errors++;
-        if (errors >= maxErrors) {
-            // Move to next player after reaching max errors
+    // Handle guessing logic
+    guessButton.addEventListener("click", function () {
+        const userGuess = guessInput.value.trim().toLowerCase();
+        if (userGuess === currentPlayer.name.toLowerCase()) {
+            // Correct guess
             currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
             initializeGame();
         } else {
-            // Display error indicator
-            const errorIndicator = document.createElement("div");
-            errorIndicator.className = "error";
-            errorContainer.appendChild(errorIndicator);
+            // Incorrect guess
+            errors++;
+            if (errors >= maxErrors) {
+                // Move to next player after reaching max errors
+                currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
+                initializeGame();
+            } else {
+                // Display error indicator
+                const errorIndicator = document.createElement("div");
+                errorIndicator.className = "error";
+                errorContainer.appendChild(errorIndicator);
+            }
         }
-    }
-});
+    });
 
-// Handle hint button click
-hintButton.addEventListener("click", function () {
-    const currentWord = wordToGuess.textContent.replace(/\s+/g, '');
-    const playerName = currentPlayer.name;
-    let newWord = "";
+    // Handle hint button click
+    hintButton.addEventListener("click", function () {
+        const currentWord = wordToGuess.textContent.replace(/\s+/g, '');
+        const playerName = currentPlayer.name;
+        let newWord = "";
 
-    for (let i = 0; i < playerName.length; i++) {
-        if (currentWord[i] === "_") {
-            newWord += playerName[i];
-            break;
-        } else {
-            newWord += currentWord[i];
+        for (let i = 0; i < playerName.length; i++) {
+            if (currentWord[i] === "_") {
+                newWord += playerName[i];
+                break;
+            } else {
+                newWord += currentWord[i];
+            }
         }
-    }
-    
-    for (let j = newWord.length; j < playerName.length; j++) {
-        newWord += "_";
+        
+        for (let j = newWord.length; j < playerName.length; j++) {
+            newWord += "_";
+        }
+
+        wordToGuess.textContent = newWord.split("").join(" ");
+    });
+
+    // Filter players based on query
+    function filterPlayers(query) {
+        return players.filter(player => player.name.toUpperCase().includes(query.toUpperCase()));
     }
 
-    wordToGuess.textContent = newWord.split("").join(" ");
-});
+    // Display suggestions for player names
+    function displaySuggestions(suggestions) {
+        suggestionsContainer.innerHTML = "";
+        suggestions.forEach(player => {
+            const suggestionItem = document.createElement("div");
+            suggestionItem.className = "suggestion-item";
+            suggestionItem.textContent = player.name;
+            suggestionItem.addEventListener("click", () => {
+                guessInput.value = player.name;
+                suggestionsContainer.innerHTML = "";
+            });
+            suggestionsContainer.appendChild(suggestionItem);
+        });
+    }
 
-// Initialize game on page load
-initializeGame();
+    // Handle input event for guess input to show suggestions
+    guessInput.addEventListener("input", function () {
+        const query = this.value;
+        const suggestions = filterPlayers(query);
+        displaySuggestions(suggestions);
+    });
+
+    // Initialize game on page load
+    initializeGame();
 });
