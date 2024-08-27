@@ -2,7 +2,7 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
     background: linear-gradient(135deg, #004d98, #a50044); /* Gradient background */
     color: #ffffff;
-    margin: 0;
+    margin: auto;
     padding: 0;
 }
 
@@ -14,8 +14,9 @@ body {
 }
 
 .navbar h1 {
-    margin: 0;
+    margin: auto;
     font-size: 28px;
+    text-align:center;
 }
 
 
@@ -103,7 +104,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin: 10px 5px;
+    margin: 10px 5px auto;
     transition: background-color 0.3s;
 }
 
