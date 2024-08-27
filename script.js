@@ -300,7 +300,7 @@ const playerPhoto = document.getElementById("player-photo");
                 newWord += currentWord[i];
             }
         }
-        
+
         for (let j = newWord.length; j < playerName.length; j++) {
             newWord += "_";
         }
